@@ -1,0 +1,25 @@
+/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
+
+// Universal
+// ==========================================================================
+
+// Use the saner border-box model for all elements.
+* {
+  box-sizing: border-box;
+}
+
+// Normalize-scss is broken into modular pieces to make it easier to edit.
+@import 'libsass-spec/suites/bolt-bench/document/document';
+@import 'libsass-spec/suites/bolt-bench/sections/sections';
+@import 'libsass-spec/suites/bolt-bench/grouping/grouping';
+@import 'libsass-spec/suites/bolt-bench/links/links';
+@import 'libsass-spec/suites/bolt-bench/text/text';
+@import 'libsass-spec/suites/bolt-bench/embedded/embedded';
+@import 'libsass-spec/suites/bolt-bench/forms/forms';
+@import 'libsass-spec/suites/bolt-bench/tables/tables';
+@import 'libsass-spec/suites/bolt-bench/interactive/interactive';
+@import 'libsass-spec/suites/bolt-bench/scripting/scripting';
+@import 'libsass-spec/suites/bolt-bench/hidden/hidden';
+
+// Note: we allow the .button component (loaded by forms) to override :link, by
+// loading links first.

@@ -1,0 +1,80 @@
+/* ------------------------------------ *\
+   Share
+\* ------------------------------------ */
+
+$bolt-share-block-link-inset: 'small';
+$bolt-share-block-link-inline-spacing: 'xsmall';
+
+
+@include bolt-custom-element('bolt-share', block, medium);
+
+.c-bolt-share {
+  display: block;
+}
+
+@each $key, $value in $bolt-opacities {
+  .c-bolt-share--opacity-#{$key} {
+    @include bolt-opacity($key);
+    transition: opacity $bolt-transition;
+
+    &:hover {
+      opacity: bolt-opacity(100);
+    }
+  }
+}
+
+.c-bolt-share__label {
+  @include bolt-font-size(xsmall);
+  opacity: bolt-opacity(60);
+
+  color: bolt-theme(text);
+}
+
+.c-bolt-share__label--medium {
+  @include bolt-font-weight(bold);
+  text-transform: uppercase;
+}
+
+.c-bolt-share__label--small {
+  @include bolt-font-weight(semibold);
+}
+
+.c-bolt-share__link {
+  display: block;
+  color: bolt-theme(link);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity $bolt-transition;
+
+  &:hover {
+    opacity: $bolt-global-link-hover-opacity;
+  }
+
+  &:active,
+  &:focus:active {
+    opacity: $bolt-global-link-active-opacity;
+  }
+}
+
+.c-bolt-share__link-text {
+  @include bolt-visuallyhidden;
+}
+
+
+// Custom animation is used here because the markup is different than the default copy to clipboard animation.
+.c-bolt-share__copy-animation {
+  display: inline-block;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: a-bolt-share-copy-animation-spin;
+  animation-timing-function: linear;
+}
+
+@keyframes a-bolt-share-copy-animation-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1620deg);
+  }
+}

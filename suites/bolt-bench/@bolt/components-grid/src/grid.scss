@@ -1,0 +1,53 @@
+@import 'libsass-spec/suites/bolt-bench/@bolt/core/styles';
+
+/* ------------------------------------ *\
+   Grid
+\* ------------------------------------ */
+
+@mixin bolt-support-grid-gap {
+  @supports (grid-gap: 1px) {
+    @content;
+  }
+}
+
+.c-bolt-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); // 12-column grid is Bolt's default.
+  grid-auto-rows: minmax(min-content, max-content);
+
+  @each $name, $value in $bolt-spacing-values {
+    &--gutter-#{$name} {
+      margin-left: bolt-spacing(#{$name}) * -1;
+
+      > bolt-grid-item {
+        @include bolt-margin-left(#{$name});
+      }
+
+      @include bolt-support-grid-gap {
+        grid-column-gap: bolt-spacing(#{$name});
+        margin-left: 0;
+
+        > bolt-grid-item {
+          @include bolt-margin-left(0);
+        }
+      }
+    }
+
+    &--row-gutter-#{$name} {
+      margin-top: bolt-v-spacing(#{$name}) * -1;
+
+      > bolt-grid-item {
+        @include bolt-margin-top(#{$name});
+      }
+
+      @include bolt-support-grid-gap {
+        grid-row-gap: bolt-v-spacing(#{$name});
+        margin-top: 0;
+
+        > bolt-grid-item {
+          @include bolt-margin-top(0);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+@import 'libsass-spec/suites/bolt-bench/@bolt/core/styles';
+
+// Shared base text styles used across all headline, subheadline, eyebrow and vanilla DIY text components
+@mixin bolt-headline() {
+  @include bolt-headline-font-weight;
+  @include bolt-headline-font-style;
+  @include bolt-headline-text-alignment;
+  @include bolt-headline-text-transform;
+
+  display: block;
+  // display: flex; // @todo: uncomment when fixing headline flex behavior
+  // flex-flow: row nowrap; // @todo: uncomment when fixing headline flex behavior
+
+  color: bolt-theme(headline);
+
+
+  &:last-child {
+    @include bolt-margin-bottom(0);
+  }
+
+  // Headline + Icon and/or Icon + Headline Spacing
+  &--icon-position-before,
+  &--icon-position-left {
+    .c-bolt-headline__icon {
+      @include bolt-margin-right(xxsmall);
+    }
+  }
+  &--icon-position-after,
+  &--icon-position-right {
+    .c-bolt-headline__icon {
+      @include bolt-margin-left(xxsmall);
+    }
+  }
+}
+
+
+
+/** Headline Font Weight Options **/
+@mixin bolt-headline-font-weight {
+  &--semibold {
+    @include bolt-font-weight(semibold);
+  }
+
+  &--regular {
+    @include bolt-font-weight(regular);
+  }
+
+  &--bold {
+    @include bolt-font-weight(bold);
+  }
+}
+
+
+/** Font Style Options **/
+@mixin bolt-headline-font-style {
+  // Font style variations
+  &--normal {
+    font-style: normal;
+  }
+
+  &--italic {
+    font-style: italic;
+  }
+}
+
+/** Left, center and right text alignment options **/
+@mixin bolt-headline-text-alignment {
+  &--left {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  &--center {
+    justify-content: center;
+    text-align: center;
+  }
+
+  &--right {
+    justify-content: flex-end;
+    text-align: right;
+  }
+}
+
+
+@mixin bolt-headline-text-transform {
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--lowercase {
+    text-transform: lowercase;
+  }
+
+  &--capitalize {
+    text-transform: capitalize;
+  }
+}

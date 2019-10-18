@@ -1,0 +1,9 @@
+/* ------------------------------------ *\
+   TEASER COMPONENT
+\* ------------------------------------ */
+
+@import 'libsass-spec/suites/bolt-bench/@bolt/core/styles';
+
+bolt-teaser:not(:last-child){
+  @include bolt-margin-bottom(medium);
+}

@@ -1,0 +1,8 @@
+/* ------------------------------------ *\
+  #VISUALLY HIDDEN UTILITIES
+\* ------------------------------------ */
+@import "libsass-spec/suites/bolt-bench/@bolt/core/styles";
+
+.u-bolt-visuallyhidden {
+  @include bolt-visuallyhidden(important);
+}

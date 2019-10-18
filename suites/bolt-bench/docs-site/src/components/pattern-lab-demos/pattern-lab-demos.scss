@@ -1,0 +1,23 @@
+@import 'libsass-spec/suites/bolt-bench/@bolt/core/styles';
+@import 'libsass-spec/suites/bolt-bench/__shared-styles';
+
+bolt-demo {
+  display: block;
+  padding: 1.65rem 2rem;
+}
+
+@import 'libsass-spec/suites/bolt-bench/_clearfix-demo.scss';
+@import 'libsass-spec/suites/bolt-bench/_color-demo.scss';
+@import 'libsass-spec/suites/bolt-bench/_display-demo.scss';
+@import 'libsass-spec/suites/bolt-bench/_flex-demo.scss';
+@import 'libsass-spec/suites/bolt-bench/_height-demo.scss';
+@import 'libsass-spec/suites/bolt-bench/_icon-list-demo.scss';
+@import 'libsass-spec/suites/bolt-bench/_opacity-demo.scss';
+@import 'libsass-spec/suites/bolt-bench/_sassdoc.scss';
+@import 'libsass-spec/suites/bolt-bench/_shadow-demo.scss';
+@import 'libsass-spec/suites/bolt-bench/_spacing-demo.scss';
+@import 'libsass-spec/suites/bolt-bench/_text-align-demo.scss';
+@import 'libsass-spec/suites/bolt-bench/_text-decoration-demo.scss';
+@import 'libsass-spec/suites/bolt-bench/_visually-hidden-demo.scss';
+@import 'libsass-spec/suites/bolt-bench/_width-demo.scss';
+@import 'libsass-spec/suites/bolt-bench/_z-index-demo.scss';

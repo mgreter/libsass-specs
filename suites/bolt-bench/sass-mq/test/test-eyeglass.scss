@@ -1,0 +1,6 @@
+@import 'libsass-spec/suites/bolt-bench/before-import';
+
+// Import media query handling as an eyeglass module
+@import 'libsass-spec/suites/bolt-bench/sass-mq';
+
+@import 'libsass-spec/suites/bolt-bench/after-import';
