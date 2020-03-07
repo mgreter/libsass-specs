@@ -1,0 +1,21 @@
+<===> input.scss
+.mango {
+  color: red;
+}
+
+type {
+  &__else {
+    @extend .mango;
+  }
+}
+
+.qualified {
+  &__else {
+    @extend .mango;
+  }
+}
+
+<===> output.css
+.mango, .qualified__else, type__else {
+  color: red;
+}
